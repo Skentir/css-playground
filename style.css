@@ -10,7 +10,7 @@ body {
     background-color: #f3f2f2;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 65px;
     box-sizing: border-box;
 }
 
@@ -22,7 +22,7 @@ body {
     display: block;
     margin: auto;
     width: 600px;
-    height: 645px;
+    height: 650px;
     background-color:#f7f5f5;
     border: 1px solid #b4b3b3;
     border-radius: 1%;
@@ -50,7 +50,6 @@ body {
 }
 #profile-pic {
     border-radius: 50%;
-    padding-top: 13px;
 }
 .icon-left {
     padding-left: 10px;
@@ -71,7 +70,12 @@ body {
     text-decoration: none;
     color: black;
 }
-
+#name {
+    font-family: 'Segoe UI Regular', Tahoma, Geneva, Verdana, sans-serif;
+    color: #929191;
+    font-size: 11px;
+    margin-top: 0;
+}
 .bottom {
     margin-left: 20px;
     margin-right: 20px;
