@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Feed</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="styling3.css">
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script src="exer3.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row-fluid header">
+                <h1>Image Feed 📷</h1>
+                <p style="text-align:center;">Note: Only accepts PNG, JPG, and JPEG files.</p>
+                <div class="input-group mb-3">
+                    <div class="custom-file inputs">
+                        <div class="col-sm-3">
+                            <input type="file" class="custom-file-input" id="upload-img">
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary" id="upload-btn"> Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div id="feed">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
