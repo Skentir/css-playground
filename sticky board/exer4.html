@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <link href="styling.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="mt-2 mb-2">
+            <div class="container">
+                <div class="box">
+                    <h1>💡 Idea Board 💡</h1>
+                    <span>Enter your ideas down below!</span>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="container">
+                <div class="box" id="input-section">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input type="text" id="user-input" class="form-control" placeholder="Enter an idea ">
+                        </div>
+                        <div class="cold-md-2">
+                            <input class="btn btn-primary" id="submitbtn" type="submit" value="Submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul id="ideaboard">
+                <li style="background-color:#fae664;">
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <article>
+                        <span>
+                            Hello! I like cats. 🐈
+                        </span>
+                    </article>
+                </li>
+                <li style="background-color:#a8edb0;">
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <article>
+                        <span>
+                            Hello! I like dogs. 🐶
+                        </span>
+                    </article>
+                </li>
+                <li style="background-color:#b1f2eb",>
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <article>
+                        <span>
+                            Animal Crossing is the pill for eternal happiness. 🤧
+                        </span>
+                    </article>
+                </li>
+            </ul>
+        </section>
+        <script src="exer4.js"></script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+li {
+    display: block;
+    width: fit-content;
+    height: auto;
+    max-width: 270px;
+    min-height: 90px;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    box-shadow: 0px 10px 20px -9px rgba(0,0,0,0.17);
+}
+#ideaboard {
+    display: flex;
+    flex-wrap: wrap;
+}
+.close {
+    display: block;
+    float: right;
+    margin-top: -1;
+}
+.box {
+    text-align: center;
+}
+#input-section {
+    display: flex;
+    justify-content: center;
+}
