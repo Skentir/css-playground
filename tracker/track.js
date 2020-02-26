@@ -35,7 +35,7 @@ $(document).ready(function() {
             expenseList.push(expense);
             total+= parseFloat(price);
             total.toFixed(2);
-            
+
             var string = 
             `   <tr>
                     <td>`+ expense.date + `</td>
@@ -72,7 +72,6 @@ $(document).ready(function() {
                 valid = false;
                 field.css({"border": "1px solid red"});
                 $("#warning").text("Invalid date.");
-                console.log("Empty");
             }
         } else 
             field.css('background-color', 'white');
