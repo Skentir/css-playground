@@ -4,10 +4,10 @@ $(document).ready(function() {
     var expenseList = [];
 
     class expenseBill {
-        constructor(date, price, description, type) {
+        constructor(date, price, desc, type) {
             this.date = date;
             this.price = price;
-            this.descriptionl
+            this.desc = desc;
             this.type = type;
         }
     }
