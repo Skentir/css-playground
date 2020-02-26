@@ -2,15 +2,7 @@
 $(document).ready(function() {
 
     var expenseList = [];
-    var today = new Date();/*
-    var y = today.getFullYear(),
-        m = today.getMonth(),
-        d = today.getDay();
-        console.log(y)
-        console.log(m)
-        console.log(d)
-    var todayNew = new Date(y,m,d);
-    console.log(todayNew); */
+    var total = 0;
 
     class expenseBill {
         constructor(date, price, desc, type) {
@@ -41,7 +33,9 @@ $(document).ready(function() {
             
             var expense = new expenseBill(date,price, desc, type);
             expenseList.push(expense);
-
+            total+= parseFloat(price);
+            total.toFixed(2);
+            
             var string = 
             `   <tr>
                     <td>`+ expense.date + `</td>
@@ -50,7 +44,8 @@ $(document).ready(function() {
                     <td>`+ expense.type + `</td>
                 </tr>
             `
-
+            
+            $("#total-amt").text("Php" + total);
             $("#expenses").append(string);
             console.log(expenseList);
             alert("Added to table");
