@@ -22,6 +22,7 @@ $(document).ready(function() {
         console.log("Finished Checking");
         
         if(check== true) {
+
             $("#warning").text("");
             var date = $("#date").val();
             var desc = $("#desc").val();
@@ -33,11 +34,12 @@ $(document).ready(function() {
             expenseList.push(expense);
 
             var string = 
-            `
-                <td>`+ expense.date + `</td>
-                <td>`+ expense.desc + `</td>
-                <td> Php `+ expense.price+ `</td>
-                <td>`+ expense.type + `</td>
+            `   <tr>
+                    <td>`+ expense.date + `</td>
+                    <td>`+ expense.desc + `</td>
+                    <td> Php `+ expense.price+ `</td>
+                    <td>`+ expense.type + `</td>
+                </tr>
             `
 
             $("#expenses").append(string);
@@ -57,6 +59,33 @@ $(document).ready(function() {
             field.css('background-color', 'white');
         }
         return valid;
+    }
+
+    $("#filter").change(function(){
+        var type = $("#filter").val();
+        filterType(type);
+    })
+    
+
+    function filterType(type) {
+        $("#expenses td").remove();
+        var i;
+
+        for (i=0; i<= expenseList.length; i++) {
+            var string = 
+            `<tr>
+                <td>`+ expenseList[i].date + `</td>
+                <td>`+ expenseList[i].desc + `</td>
+                <td> Php `+ expenseList[i].price+ `</td>
+                <td>`+ expenseList[i].type + `</td>
+            </tr>
+            `
+            if (type != "none") {
+                if (expenseList[i].type === type)
+                $("#expenses").append(string);
+            } else
+                $("#expenses").append(string);
+        }
     }
     
 });
