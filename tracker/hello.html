@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Exercise 2 - jQuery Form</title>
+    <style type="text/css">
+        label {
+            display: inline-block;
+            width: 200px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <h2> REGISTRATION </h2>
+    <form id="registration">
+        <label for="fname"> Description: </label>
+        <input type="text" name="fname" id="fname"> <br>
+
+        <label for="lname"> Last Name: </label>
+        <input type="text" name="lname" id="lname"> <br>
+
+        <label for="email"> Email: </label>
+        <input type="email" name="email" id="email"> <br>
+
+        <label for="pw"> Password: </label>
+        <input type="password" name="pw" id="pw"> <br>
+
+        <label for="cpw"> Confirm password: </label>
+        <input type="password" name="cpw" id="cpw"> <br>
+
+        <input type="button" name="submit" id="submit" value="Submit">
+    </form>
+
+    <p id="warning"></p>
+
+    <script type="text/javascript">
+
+        function checkField(field, val) {
+            var valid = val;
+
+            if(field.val() == '') {
+                valid = false;
+                field.css('background-color', 'red');
+                $("#warning").text("Fill-in missing information.");
+            } else {
+                field.css('background-color', 'white');
+            }
+
+            return valid;
+        }
+
+        function checkEqual(field1, field2, val) {
+            var valid = val;
+
+            if(field1.val() != field2.val() || field1.val() == '') {
+                valid = false;
+                field1.css('background-color', 'red');
+                field2.css('background-color', 'red');
+                $("#warning").text("Password does not match");
+            } else {
+                field1.css('background-color', 'white');
+                field2.css('background-color', 'white');
+            }
+
+            return valid;
+        }
+
+        function checkEmail(field, val) {
+            var valid = val;
+            var atIndex = field.val().indexOf('@');
+            var dotIndex = field.val().lastIndexOf('.');
+
+            if(atIndex == -1 || dotIndex == -1 || atIndex > dotIndex) {
+                valid = false;
+                field.css('background-color', 'red');
+                $("#warning").text("Invalid email format");
+            } else {
+                field.css('background-color', 'white');
+            }
+
+            return valid;
+        }
+
+        $("#submit").click(function(){
+            console.log("Entered submit");
+            var valid = true;
+            valid = checkField($("#fname"), valid);
+            valid = checkField($("#lname"), valid);
+            valid = checkField($("#email"), valid);
+            valid = checkField($("#pw"), valid);
+            valid = checkField($("#cpw"), valid);
+
+            valid = checkEmail($("#email"), valid);
+
+            valid = checkEqual($("#pw"), $("#cpw"), valid);
+
+            if(valid == true) {
+                $("#warning").text("");
+                alert("Hello " + $("#fname").val() + " " + $("#lname").val())
+            }
+            console.log("Done");
+        });
+    </script>
+
+</body>
+</html>

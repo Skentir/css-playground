@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Tracker</title>
+        <link href="prac.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Expense Tracker</h1>
+            <form id="form-tracker">
+                <ul>
+                    <li class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="date">
+                    </li>
+                    <li class="form-group">
+                        <label>Description</label>
+                        <input type="text" id="desc">
+                    </li>
+                    <li class="form-group">
+                        <label>Price</label>
+                        <input type="number" min="1" step="any" id="price">
+                    </li>
+                    <li class="form-group">
+                        <label>Category</label>
+                        <select id="type">
+                            <option value="food">Food</option>
+                            <option value="transpo">Transportation</option>
+                            <option value="bills">Bills</option>
+                        </select>
+                    </li>
+                    <p id="#warning"></p> 
+                    <button id="submitbtn">Submit</button>
+                </ul>
+            </form>
+            <label>Total:</label><label id="total-amt"></label>
+            <table border="1">
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+                <tr id="expenses">
+
+                </tr>
+            </table>
+            <select id="filter">
+                <option value="food">Food</option>
+                <option value="transpo">Transportation</option>
+                <option value="bills">Bills</option>
+            </select>
+        </div>
+        <script src="track.js"></script>
+    </body>
+</html>
