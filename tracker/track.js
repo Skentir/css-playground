@@ -2,6 +2,15 @@
 $(document).ready(function() {
 
     var expenseList = [];
+    var today = new Date();/*
+    var y = today.getFullYear(),
+        m = today.getMonth(),
+        d = today.getDay();
+        console.log(y)
+        console.log(m)
+        console.log(d)
+    var todayNew = new Date(y,m,d);
+    console.log(todayNew); */
 
     class expenseBill {
         constructor(date, price, desc, type) {
@@ -55,9 +64,23 @@ $(document).ready(function() {
             field.css({"border": "1px solid red"});
             $("#warning").text("Fill-in missing information.");
             console.log("Empty");
-        } else {
+        } else if (field.attr('type') === "date") {
+            var d1 = field.val();
+            var parts = d1.split(),
+            
+            dateStr = parts[1] + "/" + parts[0] + "/" + parts[2],
+            d1 = new Date(d1),
+            d = new Date();
+            d.setMonth(d.getMonth());
+            console.log(d1 + " > "+ d)
+            if(d1 > d ) {
+                valid = false;
+                field.css({"border": "1px solid red"});
+                $("#warning").text("Invalid date.");
+                console.log("Empty");
+            }
+        } else 
             field.css('background-color', 'white');
-        }
         return valid;
     }
 
