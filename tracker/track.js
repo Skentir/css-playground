@@ -1,5 +1,8 @@
 
 $(document).ready(function() {
+
+    var expenseList = [];
+
     class expenseBill {
         constructor(date, price, description, type) {
             this.date = date;
@@ -17,19 +20,42 @@ $(document).ready(function() {
         check = checkField($("#price"), check);
         check = checkField($("#type"), check);
         console.log("Finished Checking");
+        
+        if(check== true) {
+            $("#warning").text("");
+            var date = $("#date").val();
+            var desc = $("#desc").val();
+            var price = $("#price").val();
+            var type = $("#type").val();
+            console.log("Date " + date + " Price " + price + " Desc " + desc + " Type " +type);
+            
+            var expense = new expenseBill(date,price, desc, type);
+            expenseList.push(expense);
+
+            var string = 
+            `
+                <td>`+ expense.date + `</td>
+                <td>`+ expense.desc + `</td>
+                <td> Php `+ expense.price+ `</td>
+                <td>`+ expense.type + `</td>
+            `
+
+            $("#expenses").append(string);
+            console.log(expenseList);
+            alert("Added to table");
+        }
     });
     
     function checkField(field, val){
         var valid = val;
         if(field.val() == '') {
             valid = false;
-            field.css('border', 'red');
+            field.css({"border": "1px solid red"});
             $("#warning").text("Fill-in missing information.");
             console.log("Empty");
         } else {
             field.css('background-color', 'white');
         }
-    
         return valid;
     }
     
