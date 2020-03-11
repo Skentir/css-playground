@@ -1,0 +1,16 @@
+<h1 class="title">{{title}}</h1>
+{{#each course_records}}
+<div class="row-wrapper card-style">
+<p>{{this.yearlvl}}</p>
+    {{#each this.courses}}
+    <div class="row mb-1">
+        <div class="col-sm-4">
+            <span>{{this.coursecode}}</span>
+        </div>
+        <div class="col-sm-8">
+            <span>{{this.faculty}}</span>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/each}}

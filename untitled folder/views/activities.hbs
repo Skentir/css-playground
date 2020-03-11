@@ -1,0 +1,14 @@
+<h1 class="title">{{title}}</h1>
+
+<div style="margin-top: 2rem;">
+{{#each org_records}}
+    <div class="row row-style">
+        <div class="col-sm-5">
+            <span>{{this.orgname}}</span>
+        </div>
+        <div class="col-sm-7">
+            <span>{{this.position}}</span>
+        </div>
+    </div>
+{{/each}}
+</div>
